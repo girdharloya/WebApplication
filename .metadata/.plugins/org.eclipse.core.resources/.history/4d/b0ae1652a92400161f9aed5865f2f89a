@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class hey {
+public static void main(String args[]) throws FileNotFoundException{
+	
+	String data2 = new String();
+	String data;
+	BufferedReader br = null;
+	br = new BufferedReader(new FileReader("C:/Users/Dell/Documents/text.txt"));
+	try {
+		while((data = br.readLine())!=null){
+			data2+=(data)+'\n';
+//			System.out.println(data);
+		}
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+//	System.out.println(data2);
+	data2.split("\n");
+	
+	
+}
+}

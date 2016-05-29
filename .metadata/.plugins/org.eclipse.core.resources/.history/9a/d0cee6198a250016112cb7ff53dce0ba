@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Web Application</title>
+<!-- Include jQuery form & jQuery script file. -->
+<script src="src/main/webapp/WEB-INF/jquery-2.2.4.js"></script>
+<script src="src/main/webapp/WEB-INF/jquery.ajaxfileupload.js"></script>
+<script src="src/main/webapp/WEB-INF/fileUploadScript.js"></script>
+<script language="Javascript">
+$(document).ready(function(){ 
+  $('input[type="file"]').ajaxfileupload({
+       'action': 'UploadFile',
+		'method':'post',
+   'onComplete': function(response) {         
+         $('#upload').hide();
+         alert("File SAVED!!");
+       },
+       'onStart': function() {
+         $('#upload').show(); 
+       }
+  });
+});
+</script>
+
+<!-- Include css styles here -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<form>
+<div>                                 
+ <input type="file" name="datafile" />   
+ 
+ <div id="upload" style="display:none;">Uploading..</div>
+</div>
+</form>
+</body>
+
+</html>

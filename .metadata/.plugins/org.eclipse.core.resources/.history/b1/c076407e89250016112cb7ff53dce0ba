@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Web Application</title>
+<!-- Include jQuery form & jQuery script file. -->
+<script src="src/main/webapp/WEB-INF/jquery-2.2.4.js"></script>
+<script src="src/main/webapp/WEB-INF/jquery.ajaxfileupload.js"></script>
+<script src="src/main/webapp/WEB-INF/fileUploadScript.js"></script>
+<script language="Javascript">
+$(document).ready(function(){ 
+  $('input[type="file"]').ajaxfileupload({
+       'action': 'UploadFile',
+		'method':'post',
+   'onComplete': function(response) {         
+         $('#upload').hide();
+         alert("File SAVED!!");
+       },
+       'onStart': function() {
+         $('#upload').show(); 
+       }
+  });
+});
+</script>
+
+<!-- Include css styles here -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h3>Please Upload Your File Here</h3>
+
+ <form id="UploadForm" action="UploadFile" method="post" enctype="multipart/form-data">
+    <input type="file" size="60" id="myfile" name="myfile"> 
+     <input type="submit" value="Upload File">
+       <div id="progressbox">
+         <div id="progressbar"></div>
+         <div id="percent">0%</div>
+       </div>
+ <br />
+<div id="message"></div>
+</form>
+</body>
+
+</html>

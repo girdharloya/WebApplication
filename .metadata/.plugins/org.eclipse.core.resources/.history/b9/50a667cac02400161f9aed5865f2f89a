@@ -1,0 +1,22 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+import java.util.Set;
+
+
+public class parser {
+	HashMap<String,String> hmap = new HashMap<String,String>();
+	
+	public static void main(String args[]){
+		parser.Parse("Version:2 TaxiStation:6072 TaxiLicense:EM9543 System_ID:910 ");
+	}
+	
+	public static void Parse(String data2){
+		String[] datarr = data2.split("\n");
+
+		for (int i=0;i<datarr.length;i++) {
+		      String arr[] = datarr[i].split(":");
+		      hmap.put(arr[0], arr[1]);
+			}	
+}
+}

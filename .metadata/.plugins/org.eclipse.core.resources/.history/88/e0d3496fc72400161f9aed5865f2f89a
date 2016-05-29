@@ -1,0 +1,4 @@
+public class Parser1 {
+	static String data2;	
+	static List<String> list; 
+}

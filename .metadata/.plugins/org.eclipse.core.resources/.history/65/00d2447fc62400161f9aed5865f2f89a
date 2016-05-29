@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
+public class FileParse {
+
+public static void main(String args[]) throws JsonGenerationException, JsonMappingException, IOException{
+	
+	String data2 = new String();
+	String data;
+	BufferedReader br = null;
+	br = new BufferedReader(new FileReader("C:/Users/Dell/Documents/text.txt"));
+	try {
+		while((data = br.readLine())!=null){
+			data2+=(data)+'\n';
+//			System.out.println(data);
+		}
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+//	System.out.println(data2);
+		parser parse = new parser();
+	parse.data2 = (data2);
+	parse.Parse();
+	System.out.println(parse.getHmap());
+	
+	
+	try{
+	ObjectMapper mapper = new ObjectMapper();
+	//Convert object to JSON string and save into file directly 
+
+	mapper.writeValue(new File("C:/Users/Dell/Documents/text1.json"),parse);
+	
+	//Convert object to JSON string
+	String jsonInString = mapper.writeValueAsString(parse);
+//	System.out.println(jsonInString);
+	
+	//Convert object to JSON string and pretty print
+	jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(parse);
+	System.out.println(jsonInString);}
+	 catch (JsonGenerationException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

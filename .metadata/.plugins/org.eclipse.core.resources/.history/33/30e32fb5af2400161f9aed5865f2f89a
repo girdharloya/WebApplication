@@ -1,0 +1,9 @@
+
+public class Parse {
+String key;
+String val;
+
+	public void parse(){
+		
+}
+}

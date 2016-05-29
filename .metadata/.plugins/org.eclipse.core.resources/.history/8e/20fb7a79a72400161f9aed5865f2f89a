@@ -1,0 +1,16 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class hey {
+public static void main(String args[]) throws FileNotFoundException{
+	String data2 = new String();
+	BufferedReader br = null;
+	try{
+	br = new BufferedReader("C:/Users/Dell/Documents/text");}
+	catch(Exception e){}
+}
+}

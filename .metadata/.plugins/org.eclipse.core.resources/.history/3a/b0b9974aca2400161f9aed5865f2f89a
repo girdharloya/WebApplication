@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Parser1 {
+	static String data2;	
+	static List<String> list = new ArrayList<String>();
+	
+	public static void Parse(){
+//		data2 = getData2();
+		String[] datarr = data2.split("\n");
+		
+		for (int i=0;i<datarr.length;i++) {
+		      list.add(datarr[i]);
+			}	
+}
+
+	public static String getData2() {
+		return data2;
+	}
+
+	public static void setData2(String data2) {
+		Parser1.data2 = data2;
+	}
+
+	public static List<String> getList() {
+		return list;
+	}
+
+	public static void setList(List<String> list) {
+		Parser1.list = list;
+	}
+}

@@ -1,0 +1,15 @@
+
+public class Parser {
+String key;
+String val;
+
+	public void parse(String data2){
+		String[] datarr = data2.split("\n");
+
+		for (int i=0;i<datarr.length;i++) {
+		     datarr[i].split(":");
+
+			}
+	
+}
+}
