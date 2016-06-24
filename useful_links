@@ -11,3 +11,10 @@ javafx--needed links and info:
 ------------------------------
 e(fx)clipse
 http://download.eclipse.org/efxclipse/updates-released/1.2.0/site/
+--> steps (In Eclipse ): 
+1. go to the help in the menubar , select add software
+2. paste the above link to the WORK WITH.
+3. name to repo = e(fx)clipse
+add all the plugins.
+done !!
+-------------------------------
